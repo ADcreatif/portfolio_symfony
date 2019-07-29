@@ -1,3 +1,26 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+
+# the "app_lucky_number" route name is not important yet
+app_lucky_number:
+    path: /lucky/number
+    controller: App\Controller\LuckyController::number
+
+index:
+  path: /
+  controller: App\Controller\HomeController::httpGetMethod
+
+
+bonjour:
+  path: /bonjour/{prenom}
+  controller: App\Controller\HomeController::dire_bonjour
+
+advanced:
+  path: /bonjour/{prenom}-{banane}/{id_product}-{title}
+  controller: App\Controller\HomeController::advanced
+  defaults:
+    title: "titre par défaut"
+  requirements:
+    id_product : '\d{1,4}'
