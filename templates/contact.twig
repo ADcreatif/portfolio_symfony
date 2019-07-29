@@ -1,0 +1,41 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Contactez Moi
+{% endblock %}
+
+{% block script %}
+    <meta name="robots" content="noindex, follow">
+    <script src="js/class/FormValidator.class.js"></script>
+{% endblock %}
+
+{% block main %}
+    <main class="content">
+        <h1>Contactez moi </h1>
+        <form class="form">
+            <fieldset>
+                <legend>Siouplé !!!</legend>
+                <ul>
+                    <li>
+                        <label for="pseudo">Pseudo</label>
+                        <input id="pseudo" name="pseudo">
+                    </li>
+                    <li>
+                        <label for="email">Email</label>
+                        <input id="email" name="email">
+                    </li>
+                    <li>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </li>
+                    <li>
+                        <label></label>
+                        <button type="submit">Envoyer</button>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </main>
+{% endblock %}
+
+

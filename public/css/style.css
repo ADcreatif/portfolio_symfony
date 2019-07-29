@@ -11,12 +11,15 @@ body {
     font-size: 1.6rem;
     color: #666;
     font-family: 'Roboto', verdana, helvetica, sans-serif;
+    background: aliceblue url('../images/background.jpg');
+    background-size: cover;
 }
 
 a {
     transition: color 500ms;
-    color: #F52;
+    color: #ff963d;
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
@@ -31,15 +34,17 @@ ul {
 
 h1, #logo {
     font-family: 'Roboto', verdana, helvetica, sans-serif;
-    color: #222;
+    color: #90afd6;
     white-space: nowrap;
     text-transform: uppercase;
     font-size: 3rem;
 }
 
-h2 { color: #DDD }
+h2 { color: #567fac }
 
-h3 { color: #999 }
+h3 { color: #34585c }
+
+h1, h2 {margin-top: 0}
 
 .info {
     background: #bbf;
@@ -56,7 +61,11 @@ h3 { color: #999 }
 .content {
     margin: 0 auto;
     width: 90%;
-    max-width: 1200px;
+    max-width: 900px;
+    background: #efefef;
+    padding: 4rem;
+    border: 1px solid #87cec0;
+    margin-bottom: 4rem;
 }
 
 .flex {
@@ -70,7 +79,7 @@ h3 { color: #999 }
 
 .flex-wrap { flex-wrap: wrap; }
 
-.flex-wrap > * { white-space: nowrap; }
+/*.flex-wrap > * {white-space: nowrap;}*/
 
 .text-right { text-align: right; }
 
@@ -95,18 +104,21 @@ h3 { color: #999 }
                         HEADER
 
  *******************************************************/
-/*
-#main-nav{
+
+.nav {
     margin-top : 2rem;
 }
-#main-nav > *{
+
+.nav > * {
     text-align: center;
     line-height:4.1rem
 }
-#main-nav  > * + * {
+
+.nav > * + * {
     margin-left:3rem;
 }
-#main-nav  > *:after{
+
+.nav > *:after {
     transition: width 500ms ease;
     content: "";
     border-bottom: 1px solid #F52;;
@@ -115,15 +127,18 @@ h3 { color: #999 }
     margin: 0 auto;
 }
 
-#main-nav  > *:hover::after{
+.nav > *:hover::after {
     width: 100%;
 }
-#main-nav strong{font-weight: normal;}
-#main-nav i{
+
+.nav strong {font-weight: normal;}
+
+.nav i {
     display: block;
     font-size: 2rem
 }
-#main-nav .sub-menu {
+
+.nav .sub-menu {
     text-align: left;
     display: none;
     position:absolute;
@@ -133,11 +148,11 @@ h3 { color: #999 }
     margin-top: 2px;
 }
 
-#main-nav  > *:hover .sub-menu {
+.nav > *:hover .sub-menu {
     display: flex;
 }
 #logo {
-    float:left;
+    /* float:left; */
 }
 #logo strong{
     font-size:5rem;
@@ -147,12 +162,12 @@ h3 { color: #999 }
     content: none;
 }
 #logo{
-    display: inline-block;
-    background: url(../img/logo.png) no-repeat;
-    width: 70px;
-    height: 80px;
-    background-size: contain;
-}*/
+    /* display: inline-block; */
+    /* background: url(../img/logo.png) no-repeat; */
+    /* width: 70px; */
+    /* height: 80px; */
+    /* background-size: contain; */
+}
 
 /*******************************************************
 
@@ -191,14 +206,14 @@ td {
 
 .form fieldset {
     padding: 2rem;
-    border: 2px solid #ddd
+    border: 2px solid #c2dcf3;
 }
 
 .form legend { padding: 0 1rem }
 
 .form ul { list-style-type: none; padding: 0; margin: 0 }
 
-.form li { line-height: 3rem; display: flex; }
+.form li {line-height: 3rem;display: flex;}
 
 .form li + li { margin-top: 1rem }
 
@@ -216,7 +231,9 @@ td {
     width: 70%;
     padding: .5rem 1rem;
     border: #aaa;
-    background-color: #eee
+    background-color: #eee;
+    border: 2px solid #c2dcf3;
+    /* border-radius: 5px; */
 }
 
 .form input:focus,
@@ -246,9 +263,6 @@ td {
     background-color: #181;
 }
 
-#tasks_list li:hover .description {
-    display: block;
-}
 
 .tooltip {
     padding: 1rem;

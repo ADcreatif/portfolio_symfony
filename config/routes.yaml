@@ -1,26 +1,25 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
-
-
-# the "app_lucky_number" route name is not important yet
-app_lucky_number:
-    path: /lucky/number
-    controller: App\Controller\LuckyController::number
+# identifiant_route
+#     path: url d'acces
+#     controller : App\Controller\LeControlleur::methode associé à la route
 
 index:
   path: /
-  controller: App\Controller\HomeController::httpGetMethod
+  controller: App\Controller\PageController::index
 
+portfolio:
+  path: /portfolio
+  controller: App\Controller\PageController::portfolio
 
-bonjour:
-  path: /bonjour/{prenom}
-  controller: App\Controller\HomeController::dire_bonjour
+contact:
+  path: /contact
+  controller: App\Controller\PageController::contact
 
-advanced:
-  path: /bonjour/{prenom}-{banane}/{id_product}-{title}
-  controller: App\Controller\HomeController::advanced
-  defaults:
-    title: "titre par défaut"
+admin:
+  path: /admin
+  controller: App\Controller\PageController::admin
+
+portfolio-item:
+  path: /portfolio/{id}-{title}
+  controller: App\Controller\PageController::portfolio_item
   requirements:
-    id_product : '\d{1,4}'
+    id: '\d+'

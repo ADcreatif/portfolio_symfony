@@ -13,26 +13,25 @@
     {% block script %}{% endblock %}
 </head>
 <body>
-<header>
-    <h1>Bienvenue les lapins sur mon portfolio</h1>
-    <nav>
-        <a href="#" title="Home">Patate</a>
-        <a href="#" title="Portfolio">Portfolio</a>
-        <a href="#" title="Contact">Contact</a>
-        <a href="#" title="Admin">Admin</a>
-        <a href="#" title="Consultez notre FAQ">Aide</a>
+<header class="content">
+    <p id="logo">Bienvenue sur mon portfolio</p>
+    <nav class="flex flex-wrap nav">
+        <a href="{{ path('index') }}" title="Home">Patate</a>
+        <a href="{{ path('portfolio') }}" title="Portfolio">Portfolio</a>
+        <a href="{{ path('contact') }}" title="Contact">Contact</a>
+        <a href="{{ path('admin') }}" title="Admin">Admin</a>
     </nav>
 </header>
 
 
 {% block main %}
-    <main>
+    <main class="content">
         <h2>Nouvelle page</h2>
         <p>Page content</p>
     </main>
 {% endblock %}
 
-<footer>
+<footer class="content">
     {% block footer %}
         <p>Pied de page</p>
     {% endblock %}
