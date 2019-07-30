@@ -35,7 +35,6 @@ ul {
 h1, #logo {
     font-family: 'Roboto', verdana, helvetica, sans-serif;
     color: #90afd6;
-    white-space: nowrap;
     text-transform: uppercase;
     font-size: 3rem;
 }
@@ -219,7 +218,7 @@ td {
 
 .form li label:first-child {
     display: inline-block;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     width: 30%;
     text-align: right;
     padding-right: 3rem;
@@ -280,4 +279,15 @@ thead tr th {
 
 tbody tr:nth-child(odd) {
     background-color: aliceblue;
+}
+
+/*******************************************************
+
+                        CUSTOM
+
+ *******************************************************/
+.project-thumb {
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem
 }

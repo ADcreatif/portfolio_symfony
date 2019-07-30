@@ -1,0 +1,52 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Mes précédents tavaux
+{% endblock %}
+
+
+{% block main %}
+    <main class="content">
+        <h1>Créer un nouveau projet</h1>
+        <form class="form" method="post">
+            <fieldset>
+                <legend>Siouplé !!!</legend>
+                <ul>
+                    <li>
+                        <label for="title" class="required">Titre</label>
+                        <input id="title" name="title">
+                    </li>
+                    <li>
+                        <label for="image" class="required">Image</label>
+                        <input id="image" name="image">
+                    </li>
+                    <li>
+                        <label for="client">Client</label>
+                        <input id="client" name="client">
+                    </li>
+                    <li>
+                        <label for="url">url du projet</label>
+                        <input id="url" name="url">
+                    </li>
+                    <li>
+                        <label for="published_date">mise en ligne</label>
+                        <input id="published_date" name="published_date">
+                    </li>
+                    <li>
+                        <label for="technos">Technos</label>
+                        <input id="technos" name="technos">
+                    </li>
+                    <li>
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description"></textarea>
+                    </li>
+                    <li>
+                        <label></label>
+                        <button type="submit">Enregistrer le portfolio</button>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </main>
+{% endblock %}
+

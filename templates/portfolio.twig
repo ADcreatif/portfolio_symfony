@@ -18,22 +18,23 @@
                             title="consultez le git de alan dedobbeler">mon git</a>.</p>
             </header>
 
-            {% for item in portfolio %}
+            {% for project in portfolios %}
                 <article>
                     <figure>
-                        <img src="{{ item.image }}">
-                        <figcaption>{{ item.title }}</figcaption>
+                        <img src="{{ project.image }}">
+                        <figcaption>{{ project.title }}</figcaption>
                     </figure>
-                    <a href="{{ path('portfolio-item', {'id': item.id ,'title': item.title}) }}"
-                       title="{{ item.title }}">
-                        Lire l'article
+                    <a href="{{ path('portfolio-project', {'id': project.id ,'title': project.title}) }}"
+                       title="{{ project.title }}">
+                        Afficher le projet
                     </a>
                 </article>
 
             {% else %}
                 <p>Nous sommes désolé, il n'y à pas d'élément à afficher pour l'instant</p>
             {% endfor %}
-
         </section>
     </main>
+    <script src="js/main.js"></script>
 {% endblock %}
+

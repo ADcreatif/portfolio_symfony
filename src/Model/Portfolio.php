@@ -2,44 +2,63 @@
 
 namespace App\Model;
 
+use App\Entity\Portfolio as Portfolio_entity;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Persistence\ManagerRegistry;
 
-use App\Structure\Database;
+class Portfolio extends ServiceEntityRepository {
 
-class Portfolio {
-    function add() {
+    public function __construct(ManagerRegistry $registry) {
+        parent::__construct($registry, Portfolio_entity::class);
     }
 
+    function add($title, $image, $client, $url, $published_date, $technos, $description) {
+
+        // préparation des données
+        $project = new Portfolio_entity();
+        $project->setTitle($title);
+        $project->setImage($image);
+        $project->setClient($client);
+        $project->setUrl($url);
+        $project->setPublishedDate($published_date);
+        $project->setTechnos($technos);
+        $project->setDescription($description);
+
+        // insertion dans la base
+        $entityManager = $this->getEntityManager();
+        $entityManager->persist($project);
+        $entityManager->flush();
+    }
+
+
+    /**
+     * @param $id
+     * @return Portfolio_entity
+     */
     function get($id) {
+        return $this->find($id);
     }
 
-    function remove() {
+    function remove($id) {
+        $entityManager = $this->doctrine->getManager();
+        $entityManager->remove($id);
+        $entityManager->flush();
     }
 
+    function update($id) {
+        $project = $this->get($id);
+        $project->setTitle("nouveau titre");
+
+        // enregistrement de la mise à jour
+        $entityManager = $this->doctrine->getManager();
+        $entityManager->persist($project);
+        $entityManager->flush();
+    }
+
+    /**
+     * @return array
+     */
     function get_all() {
-
-        $db = new Database();
-        return $db->query("SELECT * FROM items");
-
-        /*
-            'title' => "Roule ma poule",
-            'content' => "",
-            'image'    =>123,
-            'id'    =>123,
-            'url'   => 'roule-ma-poule'
-
-            ],[
-                'title' => "Chausse mon 31",
-                'content' => "",
-                'id'    =>45,
-                'image'    =>45,
-                'url'   => 'chausse-mon-31-la-derniere-va-vous-etonner'
-            ],[
-                'title' => "Les cafard me foutent le cafard",
-                'content' => "",
-                'id'    => 245,
-                'image'    => 245,
-                'url'   => 'les-cafards-cest-mal'
-            ]
-        ];*/
+        return $this->findAll();
     }
 }

@@ -1,0 +1,25 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Mes précédents tavaux
+{% endblock %}
+
+
+{% block main %}
+    <main class="content">
+        <h1>{{ project.title }}</h1>
+        <img src="{{ project.image }}" alt="{{ project.title }}" class="project-thumb">
+
+        {{ project.description }}
+
+        <p>{{ project.publishedDate }}</p>
+        <p>{{ project.client }}</p>
+        <p>{{ project.technos }}</p>
+
+        {% if project.url != "" %}
+            <a href="{{ project.url }}">Accèdez au projet</a>
+        {% endif %}
+    </main>
+    <script src="js/main.js"></script>
+{% endblock %}
+

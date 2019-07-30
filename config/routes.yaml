@@ -6,9 +6,6 @@ index:
   path: /
   controller: App\Controller\PageController::index
 
-portfolio:
-  path: /portfolio
-  controller: App\Controller\PageController::portfolio
 
 contact:
   path: /contact
@@ -18,8 +15,20 @@ admin:
   path: /admin
   controller: App\Controller\PageController::admin
 
-portfolio-item:
+
+############################
+#       PORTFOLIO
+############################
+portfolio-project:
   path: /portfolio/{id}-{title}
-  controller: App\Controller\PageController::portfolio_item
+  controller: App\Controller\PortfolioController::portfolio_project
   requirements:
     id: '\d+'
+
+portfolio:
+  path: /portfolio
+  controller: App\Controller\PortfolioController::portfolio
+
+portfolio-add:
+  path: /admin/portfolio/add
+  controller: App\Controller\PortfolioController::portolio_add
