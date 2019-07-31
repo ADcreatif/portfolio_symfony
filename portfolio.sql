@@ -15,6 +15,21 @@
 /*!40101 SET @OLD_SQL_MODE = @@SQL_MODE, SQL_MODE = 'NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES = @@SQL_NOTES, SQL_NOTES = 0 */;
 
+CREATE TABLE portfolio
+(
+    id             INT AUTO_INCREMENT NOT NULL,
+    title          VARCHAR(56)        NOT NULL,
+    client         VARCHAR(32)  DEFAULT NULL,
+    url            VARCHAR(255) DEFAULT NULL,
+    image          VARCHAR(32)        NOT NULL,
+    technos        VARCHAR(128) DEFAULT NULL,
+    description    VARCHAR(512) DEFAULT NULL,
+    published_date DATE         DEFAULT NULL,
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci
+  ENGINE = InnoDB;
+
 --
 -- Table structure for table `migration_versions`
 --
