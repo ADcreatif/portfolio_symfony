@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Model\Portfolio;
-use App\Entity\Portfolio as Portfolio_entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -29,7 +28,7 @@ class PortfolioController extends AbstractController {
     // affiche tous les projets
     public function portfolio() {
 
-        $portfolio = new Portfolio();
+        $portfolio = new Portfolio($this->getDoctrine()->getManager(Portfolio_entity::class));
 
         return $this->render('portfolio.twig', [
             'portfolios' => $portfolio->get_all()
@@ -45,6 +44,4 @@ class PortfolioController extends AbstractController {
             'project' => $portfolio->get($id)
         ]);
     }
-
-
 }
